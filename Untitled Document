@@ -1,0 +1,12 @@
+To train the net dataset is comprised of SCUT datasets,
+The KITTI Vision daatset and coco datasets. SCUT datasets
+is used for positive hand case, The KITTI Vision daatset
+and coco is used for negative hand case. All imges were re-
+sized to 160 X 120 sizes images. we have to detect only one
+object( Hand) which will be of sufficient size if present be-
+cause image is capture in ego vision. which helps in reduc-
+ing model size. Randomly 55551 images is selected from-
+SCUT datasets and 39033 form coco and The KITTI Vision
+daatset . So totally 94584 images is used. out of these total
+image, ramdomly 55000 is selected for training, 15000 for
+validation and 24584 for Testing

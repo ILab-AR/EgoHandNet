@@ -36,21 +36,35 @@
 
 	<section class="main-content">
 		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
-		<p align="justify"> Hand gestures are utilised extensively on egocentric vision systems, in robotics, Augmented and Virtual Reality systems, amongst others. Accurate hand detection is typically a first step for the applications mentioned before and can be achieved through the state-of-the-art deep learning models such as YOLOv2, MobileNetv2 and Faster RCNN  Often, such models come with overhead of either computational load or failure to achieve real-time performance in a resource constrained environment. To this end, we propose a light weight hand detection module that also achieves state-of-the-art performance in First Person View(FPV) using RGB data only. Our network, termed, EgoHandNet is a hand detection module inspired by Tiny YOLO[] preserving the global context for accurate localisation of hands in FPV. Our contributions to hand detection are: low model size (73MB) can be easily ported on phone with highest precision among the existing models such as TinyYOLO, YOLOv2, FRCNN and also MobileNetV2 99.88% on SCUT dataset. This is mainly because our novel loss function used for training the network and for specific purpose of detecting hand in FPV. Our
-model is trained on a GPU machine and is ported on to an android device to be used with frugal Augmented Reality headsets in the likes of Google Cardboard and VR Box. </p>
+		<p align="justify"> With pervasive wearable technology, hand gestures form an important mode of interaction. Hand detection usually
+		the first step for hand gestural interactions. Applications for hand detection are wide, in the fields of robotics, Augmented and
+		Virtual Reality(AR/VR), Grab-and-go grocery stores amongst others. Hand detection can be achieved through the state-of-the-
+		art deep learning models such as YOLOv2, MobileNetv2 and Faster RCNN [32]. Often, such models are computationally
+		expensive or fail to achieve real-time performance in a resource constrained environments such as frugal video see-through Head
+		Mounted Devices(HMD). To this end, we propose a lightweight hand detection architecture that can be generically utilized on
+		these HMDs. Recent work in the area has shown impressive progress using RGBD input. However, since the introduction of
+		RGBD sensors, there has been little progress in algorithms that work solely on monocular color input. We capitalize on the latest
+		advancements of deep learning to overcome the need of additional depth or IR sensors for accurate hand detection. Our lightweight
+		hand detection architecture for egocentric systems is termed EgoHandNet. We demonstrate that EgoHandNet outperforms
+		state-of-art in FPV using RGB images at both in terms of accuracy exhibiting 99.88% with a very high frame rate of
+		364 FPS. EgoHandNet is a hand detection module inspired by YOLO to localize and classify hand in one go with an improved
+		loss function that fits bounding box perfectly. Our contributions to hand detection are: (a) low model size (36.6 MB) can be
+		easily ported on phone with the highest precision (b) high FPS among the existing models such as TinyYOLO, YOLOv2, FRCNN
+		and also MobileNetV2, (c) accuracy of with 99.88%. </p>
 
 
 		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Key Contribution</h3>
 		<ol>
 			<li> We propose <i> EgoHandNet </i>, a light weight convolutional neural network architecture, consisting of a CNN for efficient hand Detection in First person view gestural interaction with HMD.
 			<li> <i> EgoHandNet </i>  works in real-time and can be ported on mobile devices due to low memory footprint.
-			<li> <b> Loss function </b>: A novel loss function is defined to fit the bounding box by penalizing height and box evenly for all size boxes.
+			<li> <b> Loss function </b>: A novel loss function is defined to fit the bounding box by penalizing by enablling reflection of small deviations in large boxes
+			matter less than small deviations in small boxes. To address this we penalize equally for equal propportion of deviation of height and width of bounding box.
 		</ol>
 
 		<h3><a id="Proposed Architecture" class="anchor" href="#the-idea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Idea</h3>
 
 		
-		<p align="justify"> We present a novel light weight architecture to detect hands in first person view. Figure ?? shows our architecture as a convolutional neural network with 9 Convolutional layers followed by two Fully Connected(FC1, FC2) layers. A dataset used for training is a combination of SCUT, KITTY and MS COCO. The training of the model is de-
+		<p align="justify"> We present a novel light weight architecture to detect hands in first person view. Figure shows our architecture as a convolutional neural network with 9 Convolutional layers followed by two Fully Connected(FC1, FC2) layers. A dataset used for training is a combination of SCUT, KITTY and MS COCO. The training of the model is de-
 scribed in subsection 3.1 and evaluated it on the combined dataset (SCUT+KITTY+COCO). The initial convolutional layers of the network extract features from the image while the fully connected layer
 predicts the hand’s confidence score, with normalised hand centroid and normalized bounding box dimensions(height and width). Our network architecture is inspired by the YOLO and Tiny YOLO models for hand classification and detection. Our network has 9 convolutional layers, 4 pooling layer(after first, second ,sixth and seventh covolutional layer) followed by two fully connected layer. Batch
 normalization leads to significant improvements in convergence while eliminating the need for other forms of regularization. So batch normalization is used after each convolution layer. Input image is 160 * 120. Size of input layer is kept small because we want to detect hand in FPV as if hand is present it will be most prominent object and it will also reduce computational complexity hence model size could be small. we use leaky ReLu activation function in the convolution layer, no activation in FC1 and sigmoid activationfunction in FC2 layer. So that we can get normalized out-

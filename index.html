@@ -77,16 +77,10 @@ put ranges from 0 to 1. The final output of our network is a 1D vector of length
 
 		
 
-		<p>We have chosen dataset, that is union of SCUT dataset, The KITTI Vision dataset and MS COCO datasets. SCUT dataset is used to train positive samples as it is the
-		only benchmark dataset available for detection of hands in FPV, while KITTI Vision and MS COCO datasets are used
-		for getting negative samples. All images were resized to 160 × 120 thereby reducing model size. We have to detect
-		a bounding box containing hand in a frame which occupies a significant portion of image as it is captured in FPV. Randomly
-		55,551 images is selected from SCUT dataset and 17,033 from COCO and 22,000 from The KITTI Vision dataset. Out
-		of these images, ramdomly 55,000 are selected for training, 15,000 for validation and 24,584 for testing
-		Input to our network is normalized image obtained by dividing each channel in RGB data by 255. For tuning the network, we trained for centroid localization using only 18,000 images
-		from SCUT datasets for 16 epochs. Then using whole training set we train for hand classification. We trained for detection of
-		centroid for 12 epochs. Finally, then we train with loss function which comprises of class probability, centroid coordinates,
-		height and width of bounding box for 48 epochs.</p>
+		<p>We have chosen dataset, that is union of SCUT dataset, The KITTI Vision dataset and MS COCO datasets. SCUT dataset is used to train positive samples as it is the only benchmark dataset available for detection of hands in FPV, while KITTI Vision and MS COCO datasets are used for getting negative samples. All images were resized to 160 × 120 thereby reducing model size.
+		We have to detect a bounding box containing hand in a frame which occupies a significant portion of image as it is captured in FPV. Randomly 55,551 images is selected from SCUT dataset and 17,033 from COCO and 22,000 from The KITTI Vision dataset. Out of these images, ramdomly 55,000 are selected for training, 15,000 for validation and 24,584 for testing 
+		Input to our network is normalized image obtained by dividing each channel in RGB data by 255. For tuning the network, we trained for centroid localization using only 18,000 images from SCUT datasets for 16 epochs. Then using whole training set we train for hand classification. We trained for detection of centroid for 12 epochs.
+		Finally, then we train with loss function which comprises of class probability, centroid coordinates, height and width of bounding box for 48 epochs.</p>
 
 
 		<p align="justify"></p>

@@ -36,19 +36,34 @@
 
 	<section class="main-content">
 		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
-		<p align="justify"> With pervasive wearable technology, hand gestures form an important mode of interaction. Hand detection is usually
-		the first step for hand gestural interactions. Applications for hand detection are wide, in the fields of robotics, Augmented and
-		Virtual Reality(AR/VR), Grab-and-go grocery stores amongst others. Hand detection can be achieved through the state-of-the-
-		art deep learning models such as YOLOv2, MobileNetv2 and Faster RCNN. Often, such models are computationally
-		expensive or fail to achieve real-time performance in a resource constrained environments such as frugal video see-through Head
-		Mounted Devices(HMD). To this end, we propose a lightweight hand detection architecture that can be generically utilized on
-		these HMDs. Recent work in the area has shown impressive progress using RGBD input. However, since the introduction of
-		RGBD sensors, there has been little progress in algorithms that work solely on monocular color input. We capitalize on the latest
-		advancements of deep learning to overcome the need of additional depth or IR sensors for accurate hand detection. Our lightweight
-		hand detection architecture for egocentric systems is termed EgoHandNet. We demonstrate that EgoHandNet outperforms
-		state-of-art in FPV using RGB images at both in terms of mean Average precision(mAP) of 99.88 at IoU of 0.5 with a very high frame rate of
-		364 FPS. As hand detetection is momentous for many application. when other modules are appended to it, whole system will perform in real time.  EgoHandNet is a hand detection module inspired by YOLO to localize and classify hand in one go with an improved
-		loss function that fits bounding box perfectly.
+		<p align="justify">With pervasive wearable technology and introduction of head mounted devices, hand gestures play an important
+role for interaction. Applications for hand detection are wide, in
+the fields of robotics, Augmented and Virtual Reality(AR/VR),
+Grab-and-go grocery stores amongst others. Hand detection is
+usually the first step in these applications. It can be achieved
+through the state-of-the-art deep learning models such as
+YOLOv2 [37], MobileNetv2 [40] and Faster R-CNN [38]. Often,
+such models are computationally expensive or fail to achieve realtime performance in a resource constrained environments such as
+frugal video see-through Head Mounted Devices(HMD). To this
+end, we propose a lightweight hand detection architecture termed
+EgoHandNet, that can be generically utilized on these HMDs.
+Impressive progress has been seen in this area using RGBD input.
+However, there has been little progress in algorithms that work
+solely on RGB input. We capitalize on the latest advancements
+of deep learning to overcome the need for additional depth
+or IR sensors for accurate hand detection. We demonstrate
+that EgoHandNet outperforms state-of-art in FPV using RGB
+images at both in terms of accuracy exhibiting mean average
+precision(mAP) of 99:88%, F1 score of 0:96 and with a very
+high frame rate of 231 FPS. EgoHandNet is a hand detection
+module inspired by YOLO to localize and classify hand in one go
+with an improved loss function that fits bounding box perfectly.
+Our contributions to hand detection are: (a) low model size
+(36:6 MB) can be easily ported on phone or HMDs with the
+highest precision (b) high FPS among the existing models such
+as TinyYOLO, YOLOv2, Faster R-CNN and also MobileNetV2.
+(c) novel bounding box loss function for tight fitting bounding
+box which results in high accuracy of hand detection.
 			
 		<h3><a id="welcome-to-handgestar" align="justify" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Key Contribution</h3>
 		<ol>

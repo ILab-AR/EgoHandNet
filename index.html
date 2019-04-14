@@ -36,34 +36,38 @@
 
 	<section class="main-content">
 		<h3><a id="welcome-to-handgestar" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract</h3>
-		<p align="justify">With pervasive wearable technology and introduction of head mounted devices, hand gestures play an important
-role for interaction. Applications for hand detection are wide, in
-the fields of robotics, Augmented and Virtual Reality,
-Grab-and-go grocery stores amongst others. Hand detection is
-usually the first step in these applications. It can be achieved
-through the state-of-the-art deep learning models such as
-YOLOv2, MobileNetv2 and Faster R-CNN. Often,
-such models are computationally expensive or fail to achieve realtime performance in a resource constrained environments such as
-frugal video see-through Head Mounted Devices(HMD). To this
-end, we propose a lightweight hand detection architecture termed
-EgoHandNet, that can be generically utilized on these HMDs.
-Impressive progress has been seen in this area using RGBD input.
-However, there has been little progress in algorithms that work
-solely on RGB input. We capitalize on the latest advancements
-of deep learning to overcome the need for additional depth
-or IR sensors for accurate hand detection. We demonstrate
-that EgoHandNet outperforms state-of-art in FPV using RGB
-images at both in terms of accuracy exhibiting mean average
-precision(mAP) of 99:88%, F1 score of 0:96 and with a very
-high frame rate of 231 FPS. EgoHandNet is a hand detection
-module inspired by YOLO to localize and classify hand in one go
-with an improved loss function that fits bounding box perfectly.
-Our contributions to hand detection are: (a) low model size
-(36:6 MB) can be easily ported on phone or HMDs with the
-highest precision (b) high FPS among the existing models such
-as TinyYOLO, YOLOv2, Faster R-CNN and also MobileNetV2.
-(c) novel bounding box loss function for tight fitting bounding
-box which results in high accuracy of hand detection.
+		<p align="justify">With pervasive wearable technology and head mounted
+displays, hand gestures play an important role for inter-
+action. Applications for hand detection are wide, in the
+fields of robotics, Augmented and Virtual Reality,
+Grab-and-go grocery stores amongst others. Hand detec-
+tion is usually the first step in these applications. It can
+be achieved through the state-of-the-art deep learning mod-
+els such as YOLOv2, MobileNetv2 and Faster
+R-CNN. Often, such models are computationally ex-
+pensive or fail to achieve real-time performance in a re-
+source constrained environments such as frugal video see-
+through Head Mounted Devices. To this end, we pro-
+pose a lightweight hand detection architecture called Ego-
+HandNet, that can generically be utilized on these HMDs.
+Progress in hand detection can be attributed to RGB-Depth
+input. However, there has been little progress in algorithms
+that work solely on RGB input. We capitalize on the lat-
+est advancements of deep learning to overcome the need for
+additional depth or IR sensors for accurate hand detection.
+We demonstrate that EgoHandNet outperforms state-of-art
+in First Person View  using RGB stream in terms of
+mean Average Precision of 99.88%, F1 score of 0.96
+and with an unusually high frame rate of 231. EgoHand-
+Net is inspired by YOLO detector to localize and classify
+hand in one go with an improved loss function that helps
+to tight-fit bounding box . To summarise, contributions of
+EgoHandNet are: (a) low model size (36.6 MB) to facilitate
+easy portability on phone or HMDs with the highest preci-
+sion (b) high FPS among the well-known light models such
+as TinyYOLO, YOLOv2, Faster R-CNN and MobileNetV2.
+(c) novel bounding box loss function for tight fitting bound-
+ing box which results in high accuracy of hand detection.
 			
 		<h3><a id="welcome-to-handgestar" align="justify" class="anchor" href="#welcome-to-handgestar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Key Contribution</h3>
 		<ol>

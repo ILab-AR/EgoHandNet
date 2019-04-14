@@ -82,22 +82,7 @@ put ranges from 0 to 1. The final output of our network is a 1D vector of length
 
 		<p>Above figure shows the Architecture of our proposed network. </p>
 		
-		
-		
-		
-				<h3><a id="Proposed Architecture" class="anchor" href="#Loss Function" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Idea</h3>
 
-		
-		<p align="justify"> We present a novel light weight architecture to detect hands in first person view. Figure shows our architecture as a convolutional neural network with 9 Convolutional layers followed by two Fully Connected(FC1, FC2) layers. A dataset used for training is a combination of SCUT, KITTY and MS COCO. The initial convolutional layers of the network extract features from the image while the fully connected layer
-predicts the hand’s confidence score, with normalised hand centroid and normalized bounding box dimensions(height and width). Our network architecture is inspired by the YOLO and Tiny YOLO models for hand classification and detection. Our network has 9 convolutional layers, 4 pooling layer(after first, second ,sixth and seventh covolutional layer) followed by two fully connected layer. Batch
-normalization leads to significant improvements in convergence while eliminating the need for other forms of regularization. So batch normalization is used after each convolution layer. Input image is 160 * 120. Size of input layer is kept small because we want to detect hand in FPV as if hand is present it will be most prominent object and it will also reduce computational complexity hence model size could be small. we use leaky ReLu activation function in the convolution layer and in FC1 and sigmoid activation function in FC2 layer. So that we can get normalized out-
-put ranges from 0 to 1. The final output of our network is a 1D vector of length 5.
-			<!-- $$\begin{equation}
-		<p><img src="handgestar_img/pipeline.png"></p> https://handgestar.github.io/ -->
-		
-		<p><img src="handgestar_img/Egohand_architecture.png"></p>
-
-		<p>Above figure shows the Architecture of our proposed network. </p>
 		
 		
 		

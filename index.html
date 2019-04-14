@@ -71,10 +71,9 @@ as TinyYOLO, YOLOv2, Faster R-CNN and MobileNetV2.
 		<h3><a id="Proposed Architecture" class="anchor" href="#the-idea" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>The Idea</h3>
 
 		
-		<p align="justify"> We present a novel light weight architecture to detect hands in first person view. Figure shows our architecture as a convolutional neural network with 9 Convolutional layers followed by two Fully Connected(FC1, FC2) layers. A dataset used for training is a combination of SCUT, KITTY and MS COCO. The training of the model is de-
-scribed in subsection 3.1 and evaluated it on the combined dataset (SCUT+KITTY+COCO). The initial convolutional layers of the network extract features from the image while the fully connected layer
+		<p align="justify"> We present a novel light weight architecture to detect hands in first person view. Figure shows our architecture as a convolutional neural network with 9 Convolutional layers followed by two Fully Connected(FC1, FC2) layers. A dataset used for training is a combination of SCUT, KITTY and MS COCO. The initial convolutional layers of the network extract features from the image while the fully connected layer
 predicts the hand’s confidence score, with normalised hand centroid and normalized bounding box dimensions(height and width). Our network architecture is inspired by the YOLO and Tiny YOLO models for hand classification and detection. Our network has 9 convolutional layers, 4 pooling layer(after first, second ,sixth and seventh covolutional layer) followed by two fully connected layer. Batch
-normalization leads to significant improvements in convergence while eliminating the need for other forms of regularization. So batch normalization is used after each convolution layer. Input image is 160 * 120. Size of input layer is kept small because we want to detect hand in FPV as if hand is present it will be most prominent object and it will also reduce computational complexity hence model size could be small. we use leaky ReLu activation function in the convolution layer, no activation in FC1 and sigmoid activationfunction in FC2 layer. So that we can get normalized out-
+normalization leads to significant improvements in convergence while eliminating the need for other forms of regularization. So batch normalization is used after each convolution layer. Input image is 160 * 120. Size of input layer is kept small because we want to detect hand in FPV as if hand is present it will be most prominent object and it will also reduce computational complexity hence model size could be small. we use leaky ReLu activation function in the convolution layer and in FC1 and sigmoid activation function in FC2 layer. So that we can get normalized out-
 put ranges from 0 to 1. The final output of our network is a 1D vector of length 5.
 			<!-- $$\begin{equation}
 		<p><img src="handgestar_img/pipeline.png"></p> https://handgestar.github.io/ -->
@@ -87,10 +86,12 @@ put ranges from 0 to 1. The final output of our network is a 1D vector of length
 
 		
 
-		<p align="justify"> We have chosen dataset, that is union of SCUT dataset, The KITTI Vision dataset and MS COCO datasets. SCUT dataset is used to train positive samples as it is the only benchmark dataset available for detection of hands in FPV, while KITTI Vision and MS COCO datasets are used for getting negative samples. All images were resized to 160 × 120 thereby reducing model size.
-		We have to detect a bounding box containing hand in a frame which occupies a significant portion of image as it is captured in FPV. Randomly 55,551 images is selected from SCUT dataset and 17,033 from COCO and 22,000 from The KITTI Vision dataset. Out of these images, ramdomly 55,000 are selected for training, 15,000 for validation and 24,584 for testing 
-		Input to our network is normalized image obtained by dividing each channel in RGB data by 255. For tuning the network, we trained for centroid localization using only 18,000 images from SCUT datasets for 16 epochs. Then using whole training set we train for hand classification. We trained for detection of centroid for 12 epochs.
-		Finally, then we train with loss function which comprises of class probability, centroid coordinates, height and width of bounding box for 48 epochs.</p>
+		<p align="justify"> For Ego-hand classification, we need a dataset with and without hand in FPV. However, there is no such dataset to
+our knowledge. We have created a dataset which is combination of SCUT dataset, KITTI Vision and MS COCO dataset. SCUT dataset contains hand in FPV
+and is used to obtain positive samples, while KITTI Vision and MS COCO datasets are used for fetching negative samples as they contain generic scenes. All images were resized to 160 × 120. Randomly 55K images are selected
+from SCUT dataset, 17Kfrom COCO and 22K from KITTI Vision dataset. We split these images into 60:15:25 for
+training, validation and testing respectively. In each of the training, testing and validation splits we maintain the contribution from each dataset proportional to their respective
+sizes.</p>
 
 
 		<p align="justify"></p>
